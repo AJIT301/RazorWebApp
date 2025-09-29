@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
 namespace FirstRazorApp.Pages
 {
     public class ReadFormModel : PageModel
