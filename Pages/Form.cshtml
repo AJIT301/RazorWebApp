@@ -1,0 +1,23 @@
+@page
+@model FirstRazorApp.Pages.FormModel
+@{
+    ViewData["Title"] = "Form";
+}
+
+<h1>Submit Form</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" id="Title" asp-for="Title" required />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Question">Question</label>
+        <textarea class="form-control" id="Question" rows="3" asp-for="Question" required></textarea>
+        <span asp-validation-for="Question" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+
+@Html.ValidationSummary()

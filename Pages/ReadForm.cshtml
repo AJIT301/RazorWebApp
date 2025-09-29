@@ -1,0 +1,32 @@
+@page
+@model FirstRazorApp.Pages.ReadFormModel
+@{
+    ViewData["Title"] = "Read Form Submissions";
+}
+
+<h1>Form Submissions</h1>
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Title</th>
+            <th>Question</th>
+            <th>Submitted At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var submission in Model.Submissions)
+        {
+            <tr>
+                <td>@submission.Title</td>
+                <td>@submission.Question</td>
+                <td>@submission.SubmittedAt.ToString("g")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (!Model.Submissions.Any())
+{
+    <p>No submissions yet.</p>
+}
